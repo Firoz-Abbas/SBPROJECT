@@ -1,10 +1,11 @@
 package com.onlyjavaboot.roz.controller;
 
 
-import com.onlyjavaboot.roz.intities.Courses;
+import com.onlyjavaboot.roz.intities.Course;
 import com.onlyjavaboot.roz.services.CourseServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -24,8 +25,15 @@ public class MyController {
     // get the Courses
 
     @GetMapping("/courses")
-    public List<Courses> getCourses()
+    public List<Course> getCourses()
     {
         return this.courseServices.getCourses();
+    }
+
+
+    @GetMapping("/courses/{courseId}")
+    public Course getCourse(@PathVariable String courseId)
+    {
+        return this.courseServices.getCourse(Long.parseLong(courseId));
     }
 }

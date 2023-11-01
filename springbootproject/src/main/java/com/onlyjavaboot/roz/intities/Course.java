@@ -1,16 +1,20 @@
 package com.onlyjavaboot.roz.intities;
 
-public class Courses {
+public class Course {
     private long id;
     private String title;
     private String description;
 
-    public Courses(long id, String title, String description) {
+    public Course(long id, String title, String description) {
+        super();
         this.id = id;
         this.title = title;
         this.description = description;
     }
 
+    public Course(){
+        super();
+    }
 
 
     public long getId() {
