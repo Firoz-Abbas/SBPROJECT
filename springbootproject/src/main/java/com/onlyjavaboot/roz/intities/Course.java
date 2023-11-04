@@ -20,7 +20,6 @@ public class Course {
         super();
     }
 
-
     public long getId() {
         return id;
     }
